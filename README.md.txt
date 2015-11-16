@@ -23,8 +23,7 @@
 </p>
 
 <div>
-  <h3>Milestone #3: December 7th, 2015 (For C block)</br>
-  Milestone #3: December 8th, 2015 (For G block) </h3>
+  <h3>Milestone #3: December 8th, 2015 (For G block) </h3>
   <strong>Goal:</strong> You should have iterated and improved on your prototype by the end of this milestone.
   <ul>
     <li>first task : who is doing it (if in team)</li>
