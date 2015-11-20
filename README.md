@@ -10,7 +10,7 @@
   <h3>Milestone #1: November 20th, 2015 </h3>
   <strong>Goal:</strong> My first goal is to 
   <ul>
-    <li>first task : I am alone, therefore I do this assignment)</li>
+    <li>first task : To create a basic drawing of how I would create the goal. Also do a basic structure of how the coding should look like. :Sarah </li>
   </ul>
 </div>
 
