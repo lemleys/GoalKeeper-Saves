@@ -12,13 +12,6 @@ void setup()
 
 void draw()
 {
-  Ball();
-}
-
-// This will draw the image of the ball that will go on the screen
-
-void Ball()
-{
   
 }
 
