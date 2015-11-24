@@ -7,14 +7,24 @@ class Ball
   private int _y;
   private int _w;
   private int _h; 
-  private int _speedX
-  private String _fName
-  private PImage _img; 
+  private int _speedX; 
+  private String _fName1; 
+  private String _fName2;
+  private PImage _img1; 
+  private PImage _img2;
   
   //Setting up the default constructor
   Ball()
   {
-    
+    _x = 0;
+    _y = 0;
+    _w = 0;
+    _h = 0;
+    _fName1 = "";
+    _fName2 = "";
+    _img1 = null;
+    _img2 = null;
+    _speedX = 0;
   }
   
   // Setting up the image for the ball
