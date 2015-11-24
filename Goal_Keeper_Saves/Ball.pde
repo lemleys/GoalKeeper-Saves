@@ -3,8 +3,10 @@
 class Ball
 {
   //Setting the private functions for the class
-  private int _x;
-  private int _y;
+  private int _x1;
+  private int _x2;
+  private int _y1;
+  private int _y2;
   private int _w1;
   private int _w2;
   private int _h1; 
@@ -18,8 +20,10 @@ class Ball
   //Setting up the default constructor
   Ball()
   {
-    _x = 0;
-    _y = 0;
+    _x1 = 0;
+    _x2 = width/2;
+    _y1 = 0;
+    _y2 = height/2;
     _w1 = 0;
     _w2 = 0;
     _h1 = 0;
@@ -46,6 +50,19 @@ class Ball
     _fName2 = fileName2;
     _w2 = _img2.width;
     _h2 = _img2.height;
+  }
+  
+  //Sets the position of each image on the screen
+  public void SetPosition1(int newX1, int newY1)
+  {
+    _x1 = newX1;
+    _y1 = newY1;
+  }
+  
+  public void SetPosition2(int newX2, int newY2)
+  {
+    _x2 = newX2;
+    _y2 = newY2;
   }
   
   // Setting up the speed of the ball going into focus on the screen
