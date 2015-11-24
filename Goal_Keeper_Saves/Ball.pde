@@ -74,7 +74,22 @@ class Ball
   // Error Checking to see if the image is there for the ball
   public void Draw()
   {
-    
+    if(_img1 != null)
+    {
+      image(_img1, _x1, _y1);
+    }
+    else
+    {
+      println("ERROR: Ball has no image!");
+    }
+    if(_img2 != null)
+    {
+      image(_img2, _x2, _y2);
+    }
+    else
+    {
+      println("ERROR: Gloves has no image!");
+    }
   }
   
   // Seeing if the image and the area of where the player will hit the "ball"
