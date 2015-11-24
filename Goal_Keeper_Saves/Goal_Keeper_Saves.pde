@@ -14,6 +14,8 @@ void setup()
   Kicker = new Ball(); 
   Kicker.SetImage1("soccerball.png");
   Keeper.SetImage2("gloves.png");
+  Kicker.SetPosition1(0,0);
+  Keeper.SetPosition2(width/2,height/2);
 }
 
 // Setting up what the project should draw 
@@ -21,6 +23,8 @@ void setup()
 void draw()
 {
   background(255);
+  Kicker.Draw();
+  Keeper.Draw();
 }
 
 // This will set up the keys being pressed to associate with the certain area of the goal
