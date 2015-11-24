@@ -12,6 +12,8 @@ void setup()
   fullScreen();
   Keeper = new Ball();
   Kicker = new Ball(); 
+  Kicker.SetImage1("soccerball.png");
+  Keeper.SetImage2("gloves.png");
 }
 
 // Setting up what the project should draw 
