@@ -3,7 +3,13 @@
 class Ball
 {
   //Setting the private functions for the class
-  private
+  private int _x;
+  private int _y;
+  private int _w;
+  private int _h; 
+  private int _speedX
+  private String _fName
+  private PImage _img; 
   
   //Setting up the default constructor
   Ball()
