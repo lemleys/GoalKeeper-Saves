@@ -5,8 +5,10 @@ class Ball
   //Setting the private functions for the class
   private int _x;
   private int _y;
-  private int _w;
-  private int _h; 
+  private int _w1;
+  private int _w2;
+  private int _h1; 
+  private int _h2;
   private int _speedX; 
   private String _fName1; 
   private String _fName2;
@@ -18,8 +20,10 @@ class Ball
   {
     _x = 0;
     _y = 0;
-    _w = 0;
-    _h = 0;
+    _w1 = 0;
+    _w2 = 0;
+    _h1 = 0;
+    _h2 = 0;
     _fName1 = "";
     _fName2 = "";
     _img1 = null;
@@ -28,9 +32,20 @@ class Ball
   }
   
   // Setting up the image for the ball
-  public void SetImage()
+  public void SetImage1(String fileName1)
   {
-    
+    _img1 = loadImage(fileName1);
+    _fName1 = fileName1;
+    _w1 = _img1.width;
+    _h1 = _img1.height;
+  }
+  
+  public void SetImage2(String fileName2)
+  {
+    _img2 = loadImage(fileName2);
+    _fName2 = fileName2;
+    _w2 = _img2.width;
+    _h2 = _img2.height;
   }
   
   // Setting up the speed of the ball going into focus on the screen
