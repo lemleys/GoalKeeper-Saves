@@ -40,16 +40,41 @@ void keyPressed()
 {
   if (key == CODED)
   {
-    if(keyCode == UP)
+    if(keyCode == LEFT)
     {
        gx = 100;
        gy = 100;
     }
-    if(keyCode == LEFT)
+    if(keyCode == UP)
     {
-      gx = width;
-      gy = height/0;
+      gx = width/2;
+      gy = 100;
     }
+    if(keyCode == RIGHT)
+    {
+      gx = width-100;
+      gy = 100;
+    }
+    if(keyCode == DOWN)
+    {
+      gx = 100;
+      gy = height/2;
+    }
+  }
+  if(key == 'a')
+  {
+    gx = 100;
+    gy = height-70;
+  }
+  if(key == 'd')
+  {
+    gx = width - 100;
+    gy = height/2;
+  }
+  if(key == 'w')
+  {
+    gx = width - 100;
+    gy = height - 70;
   }
 }
 
@@ -80,5 +105,20 @@ void keyReleased()
       gx = width/2;
       gy = height/2;
     }
+  }
+  if(key == 'a')
+  {
+    gx = width/2;
+    gy = height/2;
+  }
+  if(key =='d')
+  {
+    gx= width/2;
+    gy = height/2;
+  }
+  if(key == 'w')
+  {
+    gx = width/2;
+    gy = height/2;
   }
 }
