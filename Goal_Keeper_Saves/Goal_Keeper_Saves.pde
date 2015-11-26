@@ -5,17 +5,18 @@
 Ball Kicker; 
 Ball Keeper; 
 
+
 // Setting up the background color and size of a computer screen 
+PImage sball;
+PImage glove;
 
 void setup()
 {
   fullScreen();
   Keeper = new Ball();
   Kicker = new Ball(); 
-  Kicker.SetImage1("soccerball.png");
-  Keeper.SetImage2("gloves.png");
-  Kicker.SetPosition1(0,0);
-  Keeper.SetPosition2(width/2,height/2);
+  sball = loadImage("soccerball.png");
+  glove = loadImage("gloves.png");
 }
 
 // Setting up what the project should draw 
@@ -25,6 +26,9 @@ void draw()
   background(255);
   Kicker.Draw();
   Keeper.Draw();
+  imageMode(CENTER);
+  image(sball, 100, 100, 120, 120);
+  image(glove, width/2, height/2, 220, 220);
 }
 
 // This will set up the keys being pressed to associate with the certain area of the goal
