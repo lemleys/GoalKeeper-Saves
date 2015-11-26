@@ -9,6 +9,8 @@ Ball Keeper;
 // Setting up the background color and size of a computer screen 
 PImage sball;
 PImage glove;
+int gx = width*7;
+int gy = height*4;
 
 void setup()
 {
@@ -28,7 +30,7 @@ void draw()
   Keeper.Draw();
   imageMode(CENTER);
   image(sball, 100, 100, 120, 120);
-  image(glove, width/2, height/2, 220, 220);
+  image(glove, gx, gy, 220, 220);
 }
 
 // This will set up the keys being pressed to associate with the certain area of the goal
@@ -36,7 +38,19 @@ void draw()
 
 void keyPressed()
 {
-  
+  if (key == CODED)
+  {
+    if(keyCode == UP)
+    {
+       gx = 100;
+       gy = 100;
+    }
+    if(keyCode == LEFT)
+    {
+      gx = width;
+      gy = height/0;
+    }
+  }
 }
 
 //This will see if the area of the keys are being released, or are not pressed in the 
@@ -44,5 +58,27 @@ void keyPressed()
 
 void keyReleased()
 {
-  
+  if(key == CODED)
+  {
+    if(keyCode == UP)
+    {
+      gx = width/2;
+      gy = height/2;
+    }
+    if(keyCode == LEFT);
+    {
+      gx = width/2;
+      gy = height/2;
+    }
+    if(keyCode == RIGHT)
+    {
+      gx = width/2;
+      gy = height/2;
+    }
+    if(keyCode == DOWN)
+    {
+      gx = width/2;
+      gy = height/2;
+    }
+  }
 }
