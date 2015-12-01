@@ -14,7 +14,7 @@ int gy = height*4;
 int bx = width*7;
 int by = height*4;
 int r = 0; 
-int w = 0;
+float w = random(0,7);
 
 void setup()
 {
@@ -35,7 +35,9 @@ void draw()
   imageMode(CENTER);
   image(sball, bx, by, 120, 120);
   image(glove, gx, gy, 220, 220);
-  //BallPosition();
+  textSize(50);
+  fill(250, 0, 0);
+  text("Press S to Start or press the Start Button", width-100, height/0);
 }
 
 // This will set up the keys being pressed to associate with the certain area of the goal
@@ -80,6 +82,10 @@ void keyPressed()
   {
     gx = width - 100;
     gy = height - 70;
+  }
+  if(key == 's')
+  {
+    BallPosition();
   }
 }
 
@@ -129,43 +135,42 @@ void keyReleased()
 }
 
 // Setting the position of the ball on the screen
-/* 
+
 void BallPosition()
 { 
-    if(w = 0)
+    if(w == 0)
     {
       bx = width/0 +100;
       by = height/0 + 100;
     }
-    if(w = 1)
+    if(w == 1)
     {
       bx = width/2;
       by = height/0 +100;
     }
-    if(w = 2)
+    if(w == 2)
     {
       bx = width - 100;
       by = height/0 + 100;
     }
-    if(w = 3)
+    if(w == 3)
     {
       bx = width/0 +100;
       by = height/2;
     }
-    if(w = 4)
+    if(w == 4)
     {
       bx = width - 100;
       by = height/2;
     }
-    if(w = 5)
+    if(w == 5)
     {
       bx = width/0 + 100;
       by = height - 100;
     }
-    if(w = 6)
+    if(w == 6)
     {
       bx = width - 100;
       by = height - 100;
     }
 }
-*/ 
