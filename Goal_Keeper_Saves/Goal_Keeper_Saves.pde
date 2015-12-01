@@ -38,6 +38,7 @@ void draw()
   textSize(50);
   fill(250, 0, 0);
   text("Press the Start Button", width - 100, height/0);
+  BallPosition();
 }
 
 // This will set up the keys being pressed to associate with the certain area of the goal
@@ -85,7 +86,7 @@ void keyPressed()
   }
   if(key == 's')
   {
-    BallPosition();
+    
   }
 }
 
@@ -132,45 +133,51 @@ void keyReleased()
     gx = width/2;
     gy = height/2;
   }
+  if(key == 's')
+  {
+    noStroke();
+    fill(250);
+    rect(width, 200, width - 100, height/0);
+  }
 }
 
 // Setting the position of the ball on the screen
 
 void BallPosition()
 { 
-    if(w == 0)
-    {
-      bx = width/0 +100;
-      by = height/0 + 100;
-    }
-    if(w == 1)
-    {
-      bx = width/2;
-      by = height/0 +100;
-    }
-    if(w == 2)
-    {
-      bx = width - 100;
-      by = height/0 + 100;
-    }
-    if(w == 3)
-    {
-      bx = width/0 +100;
-      by = height/2;
-    }
-    if(w == 4)
-    {
-      bx = width - 100;
-      by = height/2;
-    }
-    if(w == 5)
-    {
-      bx = width/0 + 100;
-      by = height - 100;
-    }
-    if(w == 6)
-    {
-      bx = width - 100;
-      by = height - 100;
-    }
+  if(w == 0)
+  {
+    bx = width/0 +100;
+    by = height/0 + 100;
+  }
+  if(w == 1)
+  {
+    bx = width/2;
+    by = height/0 +100;
+  }
+  if(w == 2)
+  {
+    bx = width - 100;
+    by = height/0 + 100;
+  }
+  if(w == 3)
+  {
+    bx = width/0 +100;
+    by = height/2;
+  }
+  if(w == 4)
+  {
+    bx = width - 100;
+    by = height/2;
+  }
+  if(w == 5)
+  {
+    bx = width/0 + 100;
+    by = height - 100;
+  }
+  if(w == 6)
+  {
+    bx = width - 100;
+    by = height - 100;
+  }
 }
