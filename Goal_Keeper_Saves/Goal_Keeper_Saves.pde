@@ -11,6 +11,10 @@ PImage sball;
 PImage glove;
 int gx = width*7;
 int gy = height*4;
+int bx = width*7;
+int by = height*4;
+int r = 0; 
+int w = 0;
 
 void setup()
 {
@@ -29,8 +33,9 @@ void draw()
   Kicker.Draw();
   Keeper.Draw();
   imageMode(CENTER);
-  image(sball, 100, 100, 120, 120);
+  image(sball, bx, by, 120, 120);
   image(glove, gx, gy, 220, 220);
+  //BallPosition();
 }
 
 // This will set up the keys being pressed to associate with the certain area of the goal
@@ -66,12 +71,12 @@ void keyPressed()
     gx = 100;
     gy = height-70;
   }
-  if(key == 'd')
+  if(key == 'w')
   {
     gx = width - 100;
     gy = height/2;
   }
-  if(key == 'w')
+  if(key == 'd')
   {
     gx = width - 100;
     gy = height - 70;
@@ -122,3 +127,45 @@ void keyReleased()
     gy = height/2;
   }
 }
+
+// Setting the position of the ball on the screen
+/* 
+void BallPosition()
+{ 
+    if(w = 0)
+    {
+      bx = width/0 +100;
+      by = height/0 + 100;
+    }
+    if(w = 1)
+    {
+      bx = width/2;
+      by = height/0 +100;
+    }
+    if(w = 2)
+    {
+      bx = width - 100;
+      by = height/0 + 100;
+    }
+    if(w = 3)
+    {
+      bx = width/0 +100;
+      by = height/2;
+    }
+    if(w = 4)
+    {
+      bx = width - 100;
+      by = height/2;
+    }
+    if(w = 5)
+    {
+      bx = width/0 + 100;
+      by = height - 100;
+    }
+    if(w = 6)
+    {
+      bx = width - 100;
+      by = height - 100;
+    }
+}
+*/ 
