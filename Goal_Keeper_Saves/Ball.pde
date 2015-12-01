@@ -7,7 +7,6 @@ class Ball
   private int _x2;
   private int _y1;
   private int _y2; 
-  private int _w;
   private PImage _img1; 
   private PImage _img2;
   
@@ -20,7 +19,6 @@ class Ball
     _y2 = height/2;
     _img1 = null;
     _img2 = null;
-    _w = 0;
   }
   
   //Sets the position of each image on the screen
