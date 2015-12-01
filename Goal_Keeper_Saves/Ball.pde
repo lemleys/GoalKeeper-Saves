@@ -6,8 +6,8 @@ class Ball
   private int _x1;
   private int _x2;
   private int _y1;
-  private int _y2;
-  private int _speedX; 
+  private int _y2; 
+  private int _w;
   private PImage _img1; 
   private PImage _img2;
   
@@ -20,7 +20,7 @@ class Ball
     _y2 = height/2;
     _img1 = null;
     _img2 = null;
-    _speedX = 0;
+    _w = 0;
   }
   
   //Sets the position of each image on the screen
@@ -34,12 +34,6 @@ class Ball
   {
     _x2 = newX2;
     _y2 = newY2;
-  }
-  
-  // Setting up the speed of the ball going into focus on the screen
-  public void SetSpeed()
-  {
-    
   }
   
   // Error Checking to see if the image is there for the ball
