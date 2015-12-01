@@ -37,7 +37,7 @@ void draw()
   image(glove, gx, gy, 220, 220);
   textSize(50);
   fill(250, 0, 0);
-  text("Press S to Start or press the Start Button", width-100, height/0);
+  text("Press the Start Button", width - 100, height/0);
 }
 
 // This will set up the keys being pressed to associate with the certain area of the goal
