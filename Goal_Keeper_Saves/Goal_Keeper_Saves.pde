@@ -22,7 +22,10 @@ void setup()
   keeper = new Glove();
   glove = loadImage("gloves.png");
   sball = loadImage("soccerball.png");
+  imageMode(CENTER);
   ball.SetImage(sball);
+  keeper.SetImage(glove);
+  keeper.SetPosition(gx, gy);
 }
 
 // Setting up what the project should draw 
@@ -30,9 +33,8 @@ void setup()
 void draw()
 {
   background(255);
-  imageMode(CENTER);
-  image(glove, gx, gy, 220, 220);
   ball.Draw();
+  keeper.Draw();
   Play();
 }
 
