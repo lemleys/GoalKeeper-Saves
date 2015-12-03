@@ -22,10 +22,8 @@ void setup()
   keeper = new Glove();
   glove = loadImage("gloves.png");
   sball = loadImage("soccerball.png");
-  imageMode(CENTER);
   ball.SetImage(sball);
   keeper.SetImage(glove);
-  keeper.SetPosition(gx, gy);
 }
 
 // Setting up what the project should draw 
@@ -35,6 +33,7 @@ void draw()
   background(255);
   ball.Draw();
   keeper.Draw();
+  keeper.SetPosition(gx, gy);
   Play();
 }
 
@@ -150,32 +149,32 @@ void BallPosition()
   if(w == 1)
   {
     bx = width/2;
-    by = height/0 +100;
+    by = 100;
   }
   if(w == 2)
   {
     bx = width - 100;
-    by = height/0 + 100;
+    by = 100;
   }
   if(w == 3)
   {
-    bx = width/0 +100;
+    bx = 100;
     by = height/2;
   }
   if(w == 4)
   {
-    bx = width - 100;
+    bx = width;
     by = height/2;
   }
   if(w == 5)
   {
-    bx = width/0 + 100;
-    by = height - 100;
+    bx = 100;
+    by = height;
   }
   if(w == 6)
   {
-    bx = width - 100;
-    by = height - 100;
+    bx = width;
+    by = height;
   }
 }
 
