@@ -18,7 +18,7 @@
   <h3>Milestone #2: November 30th, 2015 </h3>
   <strong>Goal:</strong> My second goal is to finish all of the coding.
   <ul>
-    <li>first task : To finish the coding for my project. Sarah </li>
+    <li>first task : To finish the coding for my project. To get the main parts within the code, such as the image and movement of the images. Sarah </li>
   </ul>
 </p>
 
@@ -26,7 +26,7 @@
   <h3>Milestone #3: December 8th, 2015 (For G block) </h3>
   <strong>Goal:</strong> My final goal is to finish the physical aspect of the game.
   <ul>
-    <li>first task : Finish the physical structure of the project. Sarah </li>
+    <li>first task : To finish the coding, how the game would start and how it would finish. Also include a ?rough? physical structure for the project. Sarah </li>
   </ul>
 </div>
 
