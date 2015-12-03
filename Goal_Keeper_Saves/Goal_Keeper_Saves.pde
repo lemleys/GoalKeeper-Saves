@@ -2,27 +2,27 @@
 
 // Ball is the data type
 // Instantiating an object
-Ball Kicker; 
-Ball Keeper; 
-
+Ball ball;
+Glove keeper;
 
 // Setting up the background color and size of a computer screen 
 PImage sball;
 PImage glove;
 int gx = width*7;
 int gy = height*4;
-int bx = width*7;
-int by = height*4;
+int bx = 100;
+int by = 100;
 int r = 0; 
-float w = random(0,7);
+float w = 0;
 
 void setup()
 {
   fullScreen();
-  Keeper = new Ball();
-  Kicker = new Ball(); 
-  sball = loadImage("soccerball.png");
+  ball = new Ball();
+  keeper = new Glove();
   glove = loadImage("gloves.png");
+  sball = loadImage("soccerball.png");
+  ball.SetImage(sball);
 }
 
 // Setting up what the project should draw 
@@ -30,11 +30,10 @@ void setup()
 void draw()
 {
   background(255);
-  Kicker.Draw();
-  Keeper.Draw();
   imageMode(CENTER);
-  image(sball, bx, by, 120, 120);
   image(glove, gx, gy, 220, 220);
+  ball.Draw();
+  Play();
 }
 
 // This will set up the keys being pressed to associate with the certain area of the goal
@@ -83,6 +82,7 @@ void keyPressed()
   if(key == 's')
   {
     BallPosition();
+    w = random(0,7);
   }
 }
 
@@ -139,10 +139,11 @@ void keyReleased()
 
 void BallPosition()
 { 
+  ball.SetPosition(bx,by);
   if(w == 0)
   {
-    bx = width/0 +100;
-    by = height/0 + 100;
+    bx = 100;
+    by = 100;
   }
   if(w == 1)
   {
@@ -175,3 +176,12 @@ void BallPosition()
     by = height - 100;
   }
 }
+
+void Play()
+{
+  if(gx == 0 && bx == 0)
+  {
+    
+  }
+}
+    
