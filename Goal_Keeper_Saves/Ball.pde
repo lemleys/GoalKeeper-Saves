@@ -15,13 +15,14 @@ class Ball
     _img1 = null;
   }
   
-  //Sets the position of each image on the screen
+  //Sets the position for the ball on the screen
   public void SetPosition(int newX1, int newY1)
   {
     _x = newX1;
     _y = newY1;
   }
   
+  //Sets the Image for the ball
   public void SetImage(PImage img)
   {
     _img1 = img;
