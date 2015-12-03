@@ -3,55 +3,40 @@
 class Ball
 {
   //Setting the private functions for the class
-  private int _x1;
-  private int _x2;
-  private int _y1;
-  private int _y2; 
+  private int _x;
+  private int _y;
   private PImage _img1; 
-  private PImage _img2;
   
   //Setting up the default constructor
   Ball()
   {
-    _x1 = 0;
-    _x2 = width/2;
-    _y1 = 0;
-    _y2 = height/2;
+    _x = 0;
+    _y = 0;
     _img1 = null;
-    _img2 = null;
   }
   
   //Sets the position of each image on the screen
-  public void SetPosition1(int newX1, int newY1)
+  public void SetPosition(int newX1, int newY1)
   {
-    _x1 = newX1;
-    _y1 = newY1;
+    _x = newX1;
+    _y = newY1;
   }
   
-  public void SetPosition2(int newX2, int newY2)
+  public void SetImage(PImage img)
   {
-    _x2 = newX2;
-    _y2 = newY2;
+    _img1 = img;
   }
-  
+
   // Error Checking to see if the image is there for the ball
   public void Draw()
   {
     if(_img1 != null)
     {
-      image(_img1, _x1, _y1);
+      image(_img1, _x, _y);
     }
     else
     {
       println("ERROR: Ball has no image!");
-    }
-    if(_img2 != null)
-    {
-      image(_img2, _x2, _y2);
-    }
-    else
-    {
-      println("ERROR: Gloves has no image!");
     }
   }
   
