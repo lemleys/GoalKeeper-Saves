@@ -14,7 +14,6 @@ int bx = 100;
 int by = 100;
 int r = 0; 
 int w = 0;
-int timeStart;
 
 void setup()
 {
@@ -27,7 +26,6 @@ void setup()
   glove.resize(200, 200);
   ball.SetImage(sball);
   keeper.SetImage(glove);
-  timeStart = millis();
 }
 
 // Setting up what the project should draw 
@@ -38,8 +36,6 @@ void draw()
   ball.Draw();
   keeper.Draw();
   keeper.SetPosition(gx, gy);
-  Play();
-  Time();
 }
 
 // This will set up the keys being pressed to associate with the certain area of the goal
@@ -53,37 +49,86 @@ void keyPressed()
     {
        gx = 50;
        gy = 50;
+       if(w == 0)
+       {
+         fill(250, 0, 0);
+         textSize(100);
+         text("Block", width/2, height);
+         BallPosition();
+       }
     }
     if(keyCode == UP)
     {
       gx = width/2;
       gy = 50;
+      if(w == 1)
+      {
+        fill(250, 0, 0);
+        textSize(100);
+        text("Block", width/2, height);
+        BallPosition();
+      }
     }
     if(keyCode == RIGHT)
     {
       gx = width-150;
       gy = 50;
+      if(w == 2)
+      {
+        fill(250, 0, 0);
+        textSize(100);
+        text("Block", width/2, height);
+        BallPosition();
+      }
     }
     if(keyCode == DOWN)
     {
       gx = 50;
       gy = height/2;
+      if(w == 3)
+      {
+        fill(250, 0, 0);
+        textSize(100);
+        text("Block", width/2, height);
+        BallPosition();
+      }
     }
   }
   if(key == 'a')
   {
     gx = 50;
     gy = height-150;
+    if(w == 5)
+    {
+      fill(250, 0, 0);
+      textSize(100);
+      text("Block", width/2, height);
+      BallPosition();
+    }
   }
   if(key == 'w')
   {
     gx = width - 150;
     gy = height/2;
+    if(w == 4)
+    {
+      fill(250, 0, 0);
+      textSize(100);
+      text("Block", width/2, height);
+      BallPosition();
+    }
   }
   if(key == 'd')
   {
     gx = width - 150;
     gy = height - 150;
+    if(w == 6)
+    {
+      fill(250, 0, 0);
+      textSize(100);
+      text("Block", width/2, height);
+      BallPosition();
+    }
   }
   if(key == 's')
   {
@@ -140,120 +185,42 @@ void keyReleased()
 
 void BallPosition()
 { 
-  ball.SetPosition(bx,by);
   w = (int) random(0,7);
   if(w == 0)
   {
     bx = 50;
     by = 50;
-    w = (int) random(0, 7);
   }
   if(w == 1)
   {
     bx = width/2;
     by = 50;
-    w = (int) random(0, 7);
   }
   if(w == 2)
   {
     bx = width-150;
     by = 50;
-    w = (int) random(0, 7);
   }
   if(w == 3)
   {
     bx = 50;
     by = height/2;
-    w = (int) random(0, 7);
   }
   if(w == 4)
   {
     bx = width-150;
     by = height/2;
-    w = (int) random(0, 7);
   }
   if(w == 5)
   {
     bx = 50;
     by = height-150;
-    w = (int) random(0, 7);
   }
   if(w == 6)
   {
     bx = width-150;
     by = height-150;
-    w = (int) random(0, 7);
   }
-}
 
-void Play()
-{
-  if(gx <= 200 && bx <= 200)
-  {
-    if(gy <= 200 && by <= 200)
-    {  
-      fill(0);
-      textSize(100);
-      text("Block", width/2, height);
-      BallPosition();
-    }
-    if(gy == height/2 && by == height/2)
-    {
-      fill(0);
-      textSize(100);
-      text("Block", width/2, height);
-      BallPosition();
-    }
-    if(gy >= height-200 && by >= height-200)
-    {
-      fill(0);
-      textSize(100);
-      text("Block", width/2, height);
-      BallPosition();
-    }
-  }
-  if(gx <= width/2 && bx <= width/2)
-  {
-    if(gy <= 200 && by <= 200)
-    {
-      fill(0);
-      textSize(100);
-      text("Block", width/2, height);
-      BallPosition();
-    }
-    if(gy >= height-200 && by >= height-200)
-    {
-      fill(0);
-      textSize(100);
-      text("Block", width/2, height);
-      BallPosition();
-    }
-  }
-  if(gx <= width && bx <= width)
-  {
-    if(gy <= 200 && by <= 200)
-    {
-      fill(0);
-      textSize(100);
-      text("Block", width/2, height);
-      BallPosition();
-    }
-    if(gy >= height-200 && by >= height-200)
-    {
-      fill(0);
-      textSize(100);
-      text("Block", width/2, height);
-      BallPosition();
-    }
-  }
+  ball.SetPosition(bx,by);
 }
-
-void Time()
-{
-  if(millis() - timeStart > 2000)
-  {
-    w = (int) random(0,7);
-    timeStart = millis();
-  }
-}
-    
