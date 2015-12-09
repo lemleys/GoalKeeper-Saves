@@ -22,6 +22,7 @@ void setup()
   keeper = new Glove();
   glove = loadImage("gloves.png");
   sball = loadImage("soccerball.png");
+  imageMode(CENTER);
   ball.SetImage(sball);
   keeper.SetImage(glove);
 }
@@ -83,7 +84,6 @@ void keyPressed()
   if(key == 's')
   {
     BallPosition();
-    w = random(0,7);
   }
 }
 
@@ -132,7 +132,7 @@ void keyReleased()
   }
   if(key == 's')
   {
-    BallPosition();
+    w = random(0,7);
   }
 }
 
@@ -180,9 +180,67 @@ void BallPosition()
 
 void Play()
 {
-  if(gx == 0 && bx == 0)
+  if(gx == 100 && bx == 100)
   {
-    
+    if(gy == 100 && by == 100)
+    {
+      fill(0);
+      textSize(100);
+      text("Miss", 200, height);
+      w = random(0,7);
+    }
+    if(gy == width/2 && by == width/2)
+    {
+      fill(0);
+      textSize(100);
+      text("Miss", 200, height);
+      w = random(0,7);
+    }
+    if(gy == width && by == width)
+    {
+      fill(0);
+      textSize(100);
+      text("Miss", 200, height);
+      w = random(0,7);
+    }
   }
+  if(gx == height/2 && bx == height/2)
+  {
+    if(gy == 100 && by == 100)
+    {
+      fill(0);
+      textSize(100);
+      text("Miss", 200, height);
+      w = random(0,7);
+    }
+    if(gy == width && by == width)
+    {
+      fill(0);
+      textSize(100);
+      text("Miss", 200, height);
+      w = random(0,7);
+    }
+  }
+  if(gx == height && bx == height)
+  {
+    if(gy == 100 && by == 100)
+    {
+      fill(0);
+      textSize(100);
+      text("Miss", 200, height);
+      w = random(0,7);
+    }
+    if(gy == width && by == width)
+    {
+      fill(0);
+      textSize(100);
+      text("Miss", 200, height);
+      w = random(0,7);
+    }
+  }
+}
+
+void Stop()
+{
 }
     
