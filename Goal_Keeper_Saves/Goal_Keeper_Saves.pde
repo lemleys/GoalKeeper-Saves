@@ -13,7 +13,8 @@ int gy = height*4;
 int bx = 100;
 int by = 100;
 int r = 0; 
-float w = 0;
+int w = 0;
+int timeStart;
 
 void setup()
 {
@@ -22,9 +23,11 @@ void setup()
   keeper = new Glove();
   glove = loadImage("gloves.png");
   sball = loadImage("soccerball.png");
-  imageMode(CENTER);
+  sball.resize(150, 150);
+  glove.resize(200, 200);
   ball.SetImage(sball);
   keeper.SetImage(glove);
+  timeStart = millis();
 }
 
 // Setting up what the project should draw 
@@ -36,6 +39,7 @@ void draw()
   keeper.Draw();
   keeper.SetPosition(gx, gy);
   Play();
+  Time();
 }
 
 // This will set up the keys being pressed to associate with the certain area of the goal
@@ -47,39 +51,39 @@ void keyPressed()
   {
     if(keyCode == LEFT)
     {
-       gx = 100;
-       gy = 100;
+       gx = 50;
+       gy = 50;
     }
     if(keyCode == UP)
     {
       gx = width/2;
-      gy = 100;
+      gy = 50;
     }
     if(keyCode == RIGHT)
     {
-      gx = width-100;
-      gy = 100;
+      gx = width-150;
+      gy = 50;
     }
     if(keyCode == DOWN)
     {
-      gx = 100;
+      gx = 50;
       gy = height/2;
     }
   }
   if(key == 'a')
   {
-    gx = 100;
-    gy = height-70;
+    gx = 50;
+    gy = height-150;
   }
   if(key == 'w')
   {
-    gx = width - 100;
+    gx = width - 150;
     gy = height/2;
   }
   if(key == 'd')
   {
-    gx = width - 100;
-    gy = height - 70;
+    gx = width - 150;
+    gy = height - 150;
   }
   if(key == 's')
   {
@@ -130,10 +134,6 @@ void keyReleased()
     gx = width/2;
     gy = height/2;
   }
-  if(key == 's')
-  {
-    w = random(0,7);
-  }
 }
 
 // Setting the position of the ball on the screen
@@ -141,106 +141,119 @@ void keyReleased()
 void BallPosition()
 { 
   ball.SetPosition(bx,by);
+  w = (int) random(0,7);
   if(w == 0)
   {
-    bx = 100;
-    by = 100;
+    bx = 50;
+    by = 50;
+    w = (int) random(0, 7);
   }
   if(w == 1)
   {
     bx = width/2;
-    by = 100;
+    by = 50;
+    w = (int) random(0, 7);
   }
   if(w == 2)
   {
-    bx = width - 100;
-    by = 100;
+    bx = width-150;
+    by = 50;
+    w = (int) random(0, 7);
   }
   if(w == 3)
   {
-    bx = 100;
+    bx = 50;
     by = height/2;
+    w = (int) random(0, 7);
   }
   if(w == 4)
   {
-    bx = width;
+    bx = width-150;
     by = height/2;
+    w = (int) random(0, 7);
   }
   if(w == 5)
   {
-    bx = 100;
-    by = height;
+    bx = 50;
+    by = height-150;
+    w = (int) random(0, 7);
   }
   if(w == 6)
   {
-    bx = width;
-    by = height;
+    bx = width-150;
+    by = height-150;
+    w = (int) random(0, 7);
   }
 }
 
 void Play()
 {
-  if(gx == 100 && bx == 100)
+  if(gx <= 200 && bx <= 200)
   {
-    if(gy == 100 && by == 100)
-    {
+    if(gy <= 200 && by <= 200)
+    {  
       fill(0);
       textSize(100);
-      text("Miss", 200, height);
-      w = random(0,7);
+      text("Block", width/2, height);
+      BallPosition();
     }
-    if(gy == width/2 && by == width/2)
+    if(gy == height/2 && by == height/2)
     {
       fill(0);
       textSize(100);
-      text("Miss", 200, height);
-      w = random(0,7);
+      text("Block", width/2, height);
+      BallPosition();
     }
-    if(gy == width && by == width)
+    if(gy >= height-200 && by >= height-200)
     {
       fill(0);
       textSize(100);
-      text("Miss", 200, height);
-      w = random(0,7);
+      text("Block", width/2, height);
+      BallPosition();
     }
   }
-  if(gx == height/2 && bx == height/2)
+  if(gx <= width/2 && bx <= width/2)
   {
-    if(gy == 100 && by == 100)
+    if(gy <= 200 && by <= 200)
     {
       fill(0);
       textSize(100);
-      text("Miss", 200, height);
-      w = random(0,7);
+      text("Block", width/2, height);
+      BallPosition();
     }
-    if(gy == width && by == width)
+    if(gy >= height-200 && by >= height-200)
     {
       fill(0);
       textSize(100);
-      text("Miss", 200, height);
-      w = random(0,7);
+      text("Block", width/2, height);
+      BallPosition();
     }
   }
-  if(gx == height && bx == height)
+  if(gx <= width && bx <= width)
   {
-    if(gy == 100 && by == 100)
+    if(gy <= 200 && by <= 200)
     {
       fill(0);
       textSize(100);
-      text("Miss", 200, height);
-      w = random(0,7);
+      text("Block", width/2, height);
+      BallPosition();
     }
-    if(gy == width && by == width)
+    if(gy >= height-200 && by >= height-200)
     {
       fill(0);
       textSize(100);
-      text("Miss", 200, height);
-      w = random(0,7);
+      text("Block", width/2, height);
+      BallPosition();
     }
   }
 }
 
-void Stop()
+void Time()
 {
+  if(millis() - timeStart > 2000)
+  {
+    w = (int) random(0,7);
+    timeStart = millis();
+  }
 }
     
