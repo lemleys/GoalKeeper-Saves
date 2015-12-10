@@ -14,7 +14,6 @@ int bx = 100;
 int by = 100;
 int r = 0; 
 int w = 0;
-
 void setup()
 {
   fullScreen();
